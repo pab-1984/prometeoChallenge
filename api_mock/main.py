@@ -5,7 +5,7 @@ from pathlib import Path
 
 app = FastAPI(title="Mocked Open Banking API")
 
-# Habilitamos CORS si querés probar desde un frontend
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # En producción deberías restringir esto
@@ -16,7 +16,7 @@ app.add_middleware(
 
 DATA_DIR = Path(__file__).parent / "data"
 
-# Cargamos los datos al inicio
+
 demographics_df = pd.read_csv(DATA_DIR / "demographics.csv")
 products_df = pd.read_csv(DATA_DIR / "products.csv")
 transactions_df = pd.read_csv(DATA_DIR / "transactions.csv")
